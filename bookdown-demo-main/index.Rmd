@@ -1,36 +1,10 @@
 --- 
-title: "A Minimal Book Example"
-author: "Yihui Xie"
-date: "`r Sys.Date()`"
+title: "Introduction"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
-documentclass: book
-bibliography: [book.bib, packages.bib]
-biblio-style: apalike
-link-citations: yes
-github-repo: rstudio/bookdown-demo
-description: "This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook."
 ---
 
-# Prerequisites
+# Introduction
+Many humanitarian and development organizations produce large amounts of data as part of their operations. UNHCR (the United Nations High Commissioner for Refugees, also known as the UN Refugee Agency) is no exception. As an output of a collaboration with the World Bank, much of the household survey data that UNHCR collects on the wellbeing and living conditions of refugees and internally displaced persons is now accessible through UNHCR microdata. The analysis of this data, which can provide hitherto inaccessible insight into the lives of those who have been forcibly displaced, can inform research, humanitarian operations, development programs and the development of policy. However, without a formal system of microdata citation, there is currently limited shared visibility into the outputs generated from this data.
 
-This is a _sample_ book written in **Markdown**. You can use anything that Pandoc's Markdown supports, e.g., a math equation $a^2 + b^2 = c^2$.
-
-The **bookdown** package can be installed from CRAN or Github:
-
-```{r eval=FALSE}
-install.packages("bookdown")
-# or the development version
-# devtools::install_github("rstudio/bookdown")
-```
-
-Remember each Rmd file contains one and only one chapter, and a chapter is defined by the first-level heading `#`.
-
-To compile this example to PDF, you need XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <https://yihui.name/tinytex/>.
-
-```{r include=FALSE}
-# automatically create a bib database for R packages
-knitr::write_bib(c(
-  .packages(), 'bookdown', 'knitr', 'rmarkdown'
-), 'packages.bib')
-```
+Understanding UNHCR microdata use in more depth will have three principal benefits. First, it will allow for a more comprehensive assessment of the impact of data production and dissemination. Second, it would generate insight into which kinds of data are being used most effectively, and this information could be used to inform data collection and dissemination strategies. Third, it could be used to refine the ways in which data is made discoverable and accessible.

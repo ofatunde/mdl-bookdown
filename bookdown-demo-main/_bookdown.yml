@@ -1,5 +1,6 @@
-book_filename: "bookdown-demo"
+book_filename: "Microdata Citation Explorer Project"
 language:
   ui:
     chapter_name: "Chapter "
 delete_merged_file: true
+rmd_files: ["index.Rmd", "01-context.Rmd", "02-solution.Rmd","03-method.Rmd"]
