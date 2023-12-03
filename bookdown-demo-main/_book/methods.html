@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 Methods | Introduction</title>
+  <meta name="description" content="Chapter 4 Methods | Introduction" />
+  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 Methods | Introduction" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 Methods | Introduction" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="proposed-solution.html"/>
+<link rel="next" href="results.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="context.html"><a href="context.html"><i class="fa fa-check"></i><b>2</b> Context</a></li>
+<li class="chapter" data-level="3" data-path="proposed-solution.html"><a href="proposed-solution.html"><i class="fa fa-check"></i><b>3</b> Proposed Solution</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="proposed-solution.html"><a href="proposed-solution.html#dataset-level-outputs"><i class="fa fa-check"></i><b>3.1</b> Dataset-level outputs</a></li>
+<li class="chapter" data-level="3.2" data-path="proposed-solution.html"><a href="proposed-solution.html#library-level-outputs"><i class="fa fa-check"></i><b>3.2</b> Library-level outputs</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>4</b> Methods</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="methods.html"><a href="methods.html#tools"><i class="fa fa-check"></i><b>4.1</b> Tools</a></li>
+<li class="chapter" data-level="4.2" data-path="methods.html"><a href="methods.html#citations"><i class="fa fa-check"></i><b>4.2</b> Citations</a></li>
+<li class="chapter" data-level="4.3" data-path="methods.html"><a href="methods.html#query-generation"><i class="fa fa-check"></i><b>4.3</b> Query Generation</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="methods.html"><a href="methods.html#next-steps"><i class="fa fa-check"></i><b>4.3.1</b> Next steps</a></li>
+<li class="chapter" data-level="4.3.2" data-path="methods.html"><a href="methods.html#citations-1"><i class="fa fa-check"></i><b>4.3.2</b> Citations</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="methods.html"><a href="methods.html#semantic-search"><i class="fa fa-check"></i><b>4.4</b> Semantic search</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="methods.html"><a href="methods.html#citations-2"><i class="fa fa-check"></i><b>4.4.1</b> Citations</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="methods.html"><a href="methods.html#network-analysis"><i class="fa fa-check"></i><b>4.5</b> Network Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="results.html"><a href="results.html#model-output"><i class="fa fa-check"></i><b>5.1</b> Model Output</a></li>
+<li class="chapter" data-level="5.2" data-path="results.html"><a href="results.html#evaluating-model-performance"><i class="fa fa-check"></i><b>5.2</b> Evaluating Model performance</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="implementation-options.html"><a href="implementation-options.html"><i class="fa fa-check"></i><b>6</b> Implementation Options</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="implementation-options.html"><a href="implementation-options.html#standalone-tool"><i class="fa fa-check"></i><b>6.1</b> Standalone tool</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="implementation-options.html"><a href="implementation-options.html#inputs"><i class="fa fa-check"></i><b>6.1.1</b> Inputs</a></li>
+<li class="chapter" data-level="6.1.2" data-path="implementation-options.html"><a href="implementation-options.html#outputs"><i class="fa fa-check"></i><b>6.1.2</b> Outputs</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="implementation-options.html"><a href="implementation-options.html#direct-integration"><i class="fa fa-check"></i><b>6.2</b> Direct integration</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="case-study-vasyr-2018.html"><a href="case-study-vasyr-2018.html"><i class="fa fa-check"></i><b>7</b> Case Study: VaSyR 2018</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="case-study-vasyr-2018.html"><a href="case-study-vasyr-2018.html#query-generation-1"><i class="fa fa-check"></i><b>7.1</b> Query generation</a></li>
+<li class="chapter" data-level="7.2" data-path="case-study-vasyr-2018.html"><a href="case-study-vasyr-2018.html#semantic-search-1"><i class="fa fa-check"></i><b>7.2</b> Semantic Search</a></li>
+<li class="chapter" data-level="7.3" data-path="case-study-vasyr-2018.html"><a href="case-study-vasyr-2018.html#topic-modeling"><i class="fa fa-check"></i><b>7.3</b> Topic Modeling</a></li>
+<li class="chapter" data-level="7.4" data-path="case-study-vasyr-2018.html"><a href="case-study-vasyr-2018.html#model-output-1"><i class="fa fa-check"></i><b>7.4</b> Model Output</a></li>
+<li class="chapter" data-level="7.5" data-path="case-study-vasyr-2018.html"><a href="case-study-vasyr-2018.html#evaluating-model-performance-1"><i class="fa fa-check"></i><b>7.5</b> Evaluating Model Performance</a></li>
+<li class="chapter" data-level="7.6" data-path="case-study-vasyr-2018.html"><a href="case-study-vasyr-2018.html#network-analysis-1"><i class="fa fa-check"></i><b>7.6</b> Network analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="contributors.html"><a href="contributors.html"><i class="fa fa-check"></i><b>8</b> Contributors</a></li>
+<li class="chapter" data-level="9" data-path="bibliography.html"><a href="bibliography.html"><i class="fa fa-check"></i><b>9</b> Bibliography</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introduction</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="methods" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Methods<a href="methods.html#methods" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>This paper describes a methodology for systematically monitoring the use of UNHCR microdata. We develop a workflow for searching literature repositories with an initial focus on academic research, but with plans to include “grey literature” in the future. We take a three-step approach to producing a comprehensive and informative list of the papers that reference a particular dataset.</p>
+<p>First, for a given dataset, we begin by combining information from the metadata fields available for the study and using these terms to form multiple and overlapping search queries; these include the primary authoring organization, the year of the survey, and the country in which the study was carried out.</p>
+<p>Second, we use the generated query strings to generate sets of search results for each UNHCR microdata set from Semantic Scholar.</p>
+<p>Third, once a list of possible references has been compiled for each dataset, we compute for each reference a measure of its relevance to the dataset in question using Natural Language Processing (NLP). We first generate a list of topics contained in each reference using the topic modeling and analysis tools made available by <a href="https://www.nlp4dev.org/">NLP4Dev</a>. To classify each possible reference by relevance to a given dataset, we consider 1) the share of identified topics related to forced displacement, 2) the set of countries mentioned in the reference, and 3) the frequency of a curated set of key-word tags related to forced displacement.</p>
+<p>Below we summarize the three primary methods that were used throughout this process. Each is described in greater detail in a link on the left side of the page.</p>
+<table style="width:100%;">
+<colgroup>
+<col width="13%" />
+<col width="21%" />
+<col width="21%" />
+<col width="21%" />
+<col width="21%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center"><strong>Step</strong></th>
+<th align="center"><strong>Input</strong></th>
+<th align="center"><strong>Output</strong></th>
+<th align="center"><strong>Benefit</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td align="center"><a href="methods/query-generation.md">Query generation</a></td>
+<td align="center">Metadata for an individual dataset</td>
+<td align="center">List of query strings</td>
+<td align="center">Information about topics and countries included, field of study and nature of use</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td align="center"><a href="methods/semantic-search.md">Semantic search</a></td>
+<td align="center">One or more query strings for each dataset</td>
+<td align="center">List(s) of citing papers</td>
+<td align="center">Information about topics and countries included, field of study and nature of use</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td align="center"><a href="methods/topic-modeling-and-sentiment-analysis.md">Topic modeling/ sentiment analysis</a></td>
+<td align="center">Text of individual citing papers</td>
+<td align="center">Information about topics and countries included, field of study and nature of use</td>
+<td align="center">We can determine how the dataset is used in each matching publication without resorting to manual review/analysis</td>
+</tr>
+</tbody>
+</table>
+<div id="tools" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Tools<a href="methods.html#tools" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We use two external tools: APIs powered by Semantic Scholar and NLP4Dev. We load corpuses from both and store them in <a href="https://console.cloud.google.com/storage/browser/mdl-explorer-app;tab=objects?project=unhcr-microdata&amp;prefix=&amp;forceOnObjectsSortingFiltering=false">Google Cloud Storage</a>.</p>
+</div>
+<div id="citations" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Citations<a href="methods.html#citations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The following papers informed our approach:</p>
+</div>
+<div id="query-generation" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Query Generation<a href="methods.html#query-generation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We begin by generating a set of search queries based on the metadata for each dataset.</p>
+<p>The full query creation notebook can be found <a href="https://github.com/ofatunde/mdl-explorer-app/blob/main/notebooks/Semantic_Scholar_NLP4DEV.ipynb">here</a>.</p>
+<p>We start with simple methods of combining the metadata. The key metadata components that we use as an input into queries are:
+* Core survey name
+* Survey abbreviation (e.g., VaSyR)
+* Lead organization (e.g., UNHCR) - short or long versions may be used
+* Category (e.g., Socioeconomic Asessment of Refugees)
+* Country
+* Year<br />
+For our initial exploration, we define six simple query types which represent different combinations of the information above :</p>
+<ul>
+<li><strong>Query type 1:</strong> lead_org_short + year + name + shortcode</li>
+<li><strong>Query type 2:</strong> lead_org_short + year + name + full_name</li>
+<li><strong>Query type 3:</strong> lead_org_short + year + name + shortcode_fullname</li>
+<li><strong>Query type 4:</strong> lead_org_long + year + name + shortcode</li>
+<li><strong>Query type 6:</strong> lead_org_long + year + name + shortcode_fullname</li>
+</ul>
+<p>Defining query structure is an important step, as the search output can be sensitive to the contents of the query used for the search. For example, the six queries above return different number of results if entered into Semantic Scholar.</p>
+<p>The table below shows the number of results returned by Semantic Scholar for each dataset.
+<code>{code-cell} ipython3 :tags: ["output_scroll","hide-input"] import pandas as pd df = pd.read_csv("../data/semantic_scholar_query_results_with_web_count.csv") print(df)</code></p>
+<p>Each of these query strings is subsequently passed into the Semantic Scholar API. The following function generates a single query which can serve as an argument into another function.</p>
+<p><code>{code-cell} # This function takes in the name of our dataframe, the id of the data set and the query number and returns the query. def query_finder(df_name: pd.DataFrame, dataset_id: int = 189, query_number:int =1 )-&gt;str:     """ Function takes in the query dataframe, the dataset ID and the query type number and retuns the query itself"""     df_indexid = df_name.set_index('id')     query = df_indexid.loc[189][f"query_type{query_number}"]     return query</code></p>
+<p>Future work will draw on more sophisticated methods of constructing queries.</p>
+<div id="next-steps" class="section level3 hasAnchor" number="4.3.1">
+<h3><span class="header-section-number">4.3.1</span> Next steps<a href="methods.html#next-steps" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>After generating these queries, we treat them as inputs to the Semantic Scholar API. See <a href="methods/semantic-search.md">the next section</a> for more details.</p>
+</div>
+<div id="citations-1" class="section level3 hasAnchor" number="4.3.2">
+<h3><span class="header-section-number">4.3.2</span> Citations<a href="methods.html#citations-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The following papers informed our approach:</p>
+</div>
+</div>
+<div id="semantic-search" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> Semantic search<a href="methods.html#semantic-search" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We made use of the <a href="https://www.semanticscholar.org/product/api">Semantic Scholar API</a>. For each of the query strings generated in the last section, we pass them to the <a href="https://api.semanticscholar.org/api-docs/graph#tag/Paper-Data">“Paper Lookup” API endpoint</a>, which we access through the <a href="https://github.com/danielnsilva/semanticscholar">SemanticScholar Python library</a> using the following call:</p>
+<p><code>{code-cell} sch = SemanticScholar() query_type1 = [] for i in dfq["query_type1"]:     results = sch.search_paper(i)     query_type1.append(results)</code>
+The output is an object which includes (among others) the following information:
+* Dataset ID
+* Paper IDs (includes SS’s internal ID, as well as external IDs such as DOI, arXiv, Pubmed, etc. where available)
+* Title
+* Authors
+* Publication venue
+* Publication year
+* Field of Study
+* Count of inbound and outbound citations
+* URL
+* Abstract
+* PDF availability (indicates whether the full PDF is included in the corpus, and whether the abstract, body, and bibliographic entries are available in parsedt format)</p>
+<p>We extract abstracts from this output, giving us an abstract for each dataset-query-paper combination where an abstract is available. The abstract, together with the indicator of PDF availability, serves as an input into our topic modeling procedure (see the next section.)</p>
+<p>```{code-cell}
+def semantic_search(<a href="query:str)-" class="uri">query:str)-</a>&gt;pd.DataFrame:
+““” This function takes in a query (from the query_finder function) and returns a dataframe of abtracts and corpus IDS”“”
+sch = SemanticScholar()
+results = sch.search_paper(query)</p>
+<pre><code>#metadata
+### Add title
+abstracts = [item.abstract for item in results]
+identifiers =  [item.externalIds for item in results]
+API_corpus_ID = [i.get(&quot;CorpusId&quot;) for i in identifiers] # we can return whatever we want here.     
+return pd.DataFrame(list(zip(abstracts, API_corpus_ID)), columns = [&#39;abstract&#39;, &#39;corpus_id&#39;])</code></pre>
+<pre><code>
+Where available, we also parse PDF content. When we parse a PDF, the output is an object which includes (among others) the following information:
+* Paper ID
+* PDF hash
+* Abstract (if available)
+* Body text (if available)
+* Bibliographic entries
+
+% From the Semantic Scholar API, we get the datasets labeled **“query_typex_abs,”** where the x  in the name = 1,2,3,4,5,6 refers to the query type. These datasets contain the following variables: **paper title, abstract, corpus ID (also called paper ID), author IDs, Digital Object identifiers (DOIs), publication year,** the **journal**  where the paper was published, and the **dataset ID**. These metadata datasets will be merged with the metadata datasets we get from the NLP4DEV API website.
+
+### Citations
+
+The following papers informed our approach: 
+
+
+## Topic Modeling and Sentiment Analysis
+We imported the documents available in the Semantic Scholar and NPL4Dev corpuses.
+
+We make use of the [NLP4Dev API] (https://www.nlp4dev.org/content-api). Depending on whether the paper contents are available in parsed or PDF formay, we use either the &quot;Analyze Text&quot; or the &quot;Analyze File&quot; endpoint. In both cases we make use of the Mallet topic model, which allows us to use the abstract or full text of a paper as an input and retrieve information about the paper content as an output.
+
+% ```{code-cell}
+% def analyze_text(input_text:str)-&gt;pd.DataFrame:
+%    url = &quot;https://www.nlp4dev.org/nlp/models/mallet/analyze_text&quot;
+%    text = input_text
+%    payload = { &quot;model_id&quot;: &quot;6fd8b418cbe4af7a1b3d24debfafa1ee&quot;, &quot;text&quot;: text }
+%    headers = { &#39;Content-Type&#39;: &#39;application/x-www-form-urlencoded&#39;,}
+%    response = requests.request(&quot;POST&quot;, url, headers=headers, data=payload) # This returns a dictionary in string form
+%
+%    # Get metadata from the NLP4DEV API
+%    resp = eval(response.text) # this is how we recover the dictionary from the string
+%
+%    #use the keys of the dictionaries to get the metadata. We have a problem here because the values are lists of different 
+%    #lengths which is hard to convert to dataframes.
+%
+%    dataframe = pd.DataFrame(resp.get(&#39;doc_topic_words&#39;))
+%    country_counts = resp.get(&#39;country_counts&#39;)
+%    country_details = resp.get(&#39;country_details&#39;)
+%    country_groups = resp.get(&#39;country_groups&#39;)
+%    tag_counts = resp.get(&#39;jdc_tag_counts&#39;)
+%    return dataframe, list([country_counts, country_details, country_groups, tag_counts])
+% ```
+
+We run the abstracts or PDF text from the Semantic Scholar results through the NLP4DEV API, which returns the following information:
+%We convert the response objects into three types of datasets: **“NLP4DEV_qx”**, **“topic_importance_querytypex”**, and **“nlpdev_queryx&quot;**. **“NLP4DEV_qx”** datasets contain the metadata from the NLP4DEV API: 
+* country counts
+* country group
+* JDC tags (a list of phrases defined by NLP4Dev as being related to forced displacement)
+* the tag counts
+* dataset ID
+* Corpus ID 
+* the country that is mentioned the most. 
+
+The JDC tags include the following: 
+* &quot;asylum seeker&quot;
+* &quot;climate refugee&quot;
+* &quot;country of asylum&quot;
+* &quot;exile&quot;
+* &quot; forced displacement&quot;
+* &quot;host community&quot;
+* &quot;internally displaced population&quot;
+* &quot;ocha&quot;, &quot;population of concern&quot;
+* &quot;refugee&quot;
+* &quot; refugee camp&quot;
+* &quot;repatriate&quot;
+* &quot;resetlement area&quot;
+* &quot;returnee&quot;
+* &quot;stateless&quot;
+* &quot;unhcr&quot;
+
+% **“nlpdev_queryx&quot;** datasets containing the raw data dump from the NLP4DEV API. Basically, **“nlpdev_queryx&quot;**is the raw version of **&quot;NLP4DEV_qx&quot;**. These datasets can be found in the NLP4DEV datasets folder on the cloud.
+
+
+
+```{code-cell}
+
+def NLP4Dev(abstract_or_fulltext,text_source):
+
+    if(abstract_or_fulltext == &#39;PDF&#39;):
+        #extract output using &quot;Analyze_file&quot; endpoint
+        url = &quot;https://www.nlp4dev.org/nlp/models/mallet/analyze_file&quot;
+        payload={&quot;model_id&quot;: &quot;6fd8b418cbe4af7a1b3d24debfafa1ee&quot;}
+        files=[(&#39;file&#39;,(&#39;mdl-explorer-app/data/02637758211070565.pdf&#39;,open(&#39;data/02637758211070565.pdf&#39;,&#39;rb&#39;),&#39;application/pdf&#39;))]
+        headers = {}
+        response = requests.request(&quot;POST&quot;, url, headers=headers, data=payload, files=files)
+        resp = eval(response.text)
+        topic_distribution = resp.get(&#39;doc_topic_words&#39;)
+        country_distribution = resp.get(&#39;country_details&#39;)
+        tag_distribution = resp.get(&#39;jdc_tag_counts&#39;)
+    elif(abstract_or_fulltext == &#39;parsed_PDF&#39;):
+        #extract output using &quot;Analyze_text&quot; endpoint on full extracted text
+        url = &quot;https://www.nlp4dev.org/nlp/models/mallet/analyze_text&quot;
+        payload = { &quot;model_id&quot;: &quot;6fd8b418cbe4af7a1b3d24debfafa1ee&quot;, &quot;text&quot;: text_source }
+        headers = { &#39;Content-Type&#39;: &#39;application/x-www-form-urlencoded&#39;,}
+        response = requests.request(&quot;POST&quot;, url, headers=headers, data=payload)
+        resp = eval(response.text)
+        topic_distribution = resp.get(&#39;doc_topic_words&#39;)
+        country_distribution = resp.get(&#39;country_details&#39;)
+        tag_distribution = resp.get(&#39;jdc_tag_counts&#39;)
+    elif(abstract_or_fulltext == &#39;abstract_only&#39;):
+        #extract output using &quot;Analyze_text&quot; endpoint on abstract text
+        url = &quot;https://www.nlp4dev.org/nlp/models/mallet/analyze_text&quot;
+        payload = { &quot;model_id&quot;: &quot;6fd8b418cbe4af7a1b3d24debfafa1ee&quot;, &quot;text&quot;: text_source }
+        headers = { &#39;Content-Type&#39;: &#39;application/x-www-form-urlencoded&#39;,}
+        response = requests.request(&quot;POST&quot;, url, headers=headers, data=payload)
+        resp = eval(response.text)
+        topic_distribution = pd.DataFrame(resp.get(&#39;doc_topic_words&#39;))
+        country_distribution = pd.DataFrame(resp.get(&#39;country_details&#39;))
+        tag_distribution = pd.DataFrame(resp.get(&#39;jdc_tag_counts&#39;))
+        topic_39_percentage = abs(topic_distribution.value[2])
+       
+        if len(country_distribution) &gt; 0:
+            df_indexid = country_distribution.set_index(&#39;count&#39;)
+            majority_country = df_indexid.loc[max(country_distribution[&#39;count&#39;])][&#39;name&#39;]
+        else:
+            majority_country = &#39;NONE&#39;
+        
+        jdc_tag_count = len(tag_distribution)
+
+        
+        return topic_distribution , country_distribution , tag_distribution , majority_country , topic_39_percentage, jdc_tag_count</code></pre>
+<p><span class="math display">\[ include a sample of text showing topic distribution \]</span></p>
+<p>We use the outputs from the NLP4Dev to calculate a “relevance” score for each dataset-paper compbination</p>
+<p>```{code-cell}
+def calculate_relevance(ref,dataset, topic_39_percentage, jdc_tag_count,majority_country,relevance_threshold, paper_title = None):
+#We should define ref as a global variable if the app will always be reading from that one file
+# removed the paper titles argument because we are not using it anywhere in the function. Check with Mureji.</p>
+<pre><code>dataset_country = ref.loc[ref[&#39;id&#39;] == dataset, &#39;nation&#39;].iloc[0]
+dataset_title = ref.loc[ref[&#39;id&#39;] == dataset, &#39;title&#39;].iloc[0]
+if((topic_39_percentage &gt; relevance_threshold)and (majority_country == dataset_country)):
+    relevance = 1
+elif((topic_39_percentage &gt; relevance_threshold)and (majority_country != dataset_country)):
+    relevance = 0.5
+else:
+    relevance = 0
+    
+final_output = pd.DataFrame(list(zip([dataset_title],[relevance]
+                ,[topic_39_percentage]
+                ,[jdc_tag_count])), columns = [&quot;Dataset Name&quot;,&quot;Relevance&quot;,&quot;topic 39 Percentage&quot;, &quot;JDC Tag Counts&quot;])  
+return final_output</code></pre>
+<p>```</p>
+<p>% “topic_importance_querytypex” datasets contain the topic importance. The default number of topics returned from the NLP4DEV API is 10.</p>
+<p>The outputs of this relevance function are returned to users in our <a href="implementation-options.md">user tool</a>.</p>
+<p>% We merge the semantic scholar metadata(<strong>“query_typex_abs.csv”</strong>) and the metadata (<strong>“NLP4DEV_qx”</strong>) files we get from running the abstracts through the NLP4DEV API. The datasets labeled <strong>“ss_NLP4_queryx_merge”</strong> and <strong>“qx_ss_nlpdev_master”</strong> are the results of different types or merges from the two metadata sources. If in doubt, use the <strong>“qx_ss_nlpdev_master”</strong> datasets.</p>
+<p>% <strong>“qx_datasets”</strong> contain the datasets that returned queries from the NLP4DEV API for each query. This returns the datasets that do not have HTML tags.
+%<strong>“qx_qx_sample_streamlit_demo”</strong> and <strong>“qx_qx_demo_short”</strong> contain the following variables: <strong>title</strong>, <strong>abstract</strong>, <strong>dataset number</strong>, and <strong>query number</strong>.
+%<strong>“qx_qx_sample_results”</strong> datasets contain the information we need to display in the app. It contains the following variables: <strong>dataset title</strong>, <strong>paper title</strong>, <strong>relevance</strong>, <strong>JDC tags</strong>, <strong>value</strong>, and <strong>topic percentages</strong>.</p>
+<div id="citations-2" class="section level3 hasAnchor" number="4.4.1">
+<h3><span class="header-section-number">4.4.1</span> Citations<a href="methods.html#citations-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The following papers informed our approach:</p>
+</div>
+</div>
+<div id="network-analysis" class="section level2 hasAnchor" number="4.5">
+<h2><span class="header-section-number">4.5</span> Network Analysis<a href="methods.html#network-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The final portion of our methodology allows us to obtain higher-level insights about the network of authors/papers making use of UNHCR microdata.</p>
+<p>{cite}<code>ValenzuelaEscarcega2015IdentifyingMC</code> have worked on identifying “meaningful” citations Researchers such as {cite}<code>Cohan2019</code> and {cite}<code>teufel-etal-2006-annotation</code> have developed methods for inferring “citation intent”, or information about <em>how</em> a paper references another paper (or in our case, a dataset). {cite}<code>Jurgens2018</code> extend this to use citations as a lens through which to understand the evolution of a given scientific field.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="proposed-solution.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="results.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/03-method.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Microdata Citation Explorer Project.pdf", "Microdata Citation Explorer Project.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
