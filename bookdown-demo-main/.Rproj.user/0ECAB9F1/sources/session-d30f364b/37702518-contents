@@ -1,0 +1,84 @@
+library(ggplot2)
+library(dplyr)
+library(RColorBrewer)
+library(shiny)
+library(janitor)
+library(rmarkdown)
+library(shinythemes)
+library(rsconnect)
+
+
+source("load_input_data.R")
+
+source("functions.R")
+
+
+########### UI function ==================================================================
+shinyApp(
+  ui = fluidPage(
+    sidebarLayout(
+      sidebarPanel(
+        #actionButton("newplot", "New plot"),
+        selectInput(
+          inputId = "selected_antigen",
+          label = "Select antigen",
+          choices = antigen_list,
+          selected = "PCV",
+          multiple = FALSE,
+          selectize = TRUE,
+          width = NULL,
+          size = NULL
+        ),
+        
+        selectInput(
+          inputId = "target_geo",
+          label = "Select focus region",
+          choices = unique(linksbridge_data$WHO.Region),
+          selected = "AFRO",
+          multiple = FALSE,
+          selectize = TRUE,
+          width = NULL,
+          size = NULL
+        )
+      ),
+      mainPanel(
+        fluidRow(
+          column(6,
+                 plotOutput("plot1",width = "100%"),
+                 plotOutput("plot2",width = "100%")
+                 ),
+          column(6,
+                 plotOutput("plot3",width = "100%"),
+                 plotOutput("plot4",width = "100%")
+          )
+        )
+        
+      )
+    )
+  ),
+  server = function(input, output) {
+    output$plot1 <- renderPlot({
+     # input$newplot
+      # Add a little noise to the cars data
+      demand_summary1(input$target_geo,input$selected_antigen)
+    })
+    
+    output$plot2 <- renderPlot({
+      #input$newplot
+      # Add a little noise to the cars data
+      demand_summary2(input$target_geo,input$selected_antigen)
+    })
+
+    output$plot3 <- renderPlot({
+      #input$newplot
+      # Add a little noise to the cars data
+      demand_summary3(input$target_geo,input$selected_antigen)
+    })
+
+    output$plot4 <- renderPlot({
+      #input$newplot
+      # Add a little noise to the cars data
+      demand_summary4(input$target_geo,input$selected_antigen)
+    })
+  }
+)

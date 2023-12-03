@@ -1,0 +1,17 @@
+googledrive::drive_auth(path = "C:/Users/ofatunde/Dropbox/1_Research/INSEAD Africa/Final Deliverables/Official codebase/vaccine-market-explorer-published/.secrets/vaccine-markets-explorer.json")
+
+googledrive::drive_find(n_max = 30)
+
+
+read_file_from_google_drive <- function(file, fun, ...) {
+  test_file <- tempfile(fileext = ".txt")
+  googledrive::drive_download(
+    file = file,
+    path = test_file
+  )
+  test_data <- fun(test_file, ...)
+  test_data
+}
+test <- read_file_from_google_drive("test.txt", readLines)
+csv_data <- read_file_from_google_drive("csv_data.csv", read.csv, stringsAsFactors = FALSE)
+xlsx_data <- read_file_from_google_drive("xlsx_data.xlsx", openxlsx::read.xlsx, sheet_name = "Sheet1")
